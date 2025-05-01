@@ -1,0 +1,112 @@
+h1,h2,h3{
+    color: rgb(25, 38, 71);
+}
+p{
+    text-indent: 2em;
+    font-size: 1.125rem;
+    line-height:2;
+}
+li{
+    font-size: 1.125rem;
+    line-height:2;
+}
+.title{
+    height: 70px; 
+    margin-top: -70px;
+}
+/*分割线*/
+hr{
+    background: linear-gradient(to right, rgb(25,38,71) 0%, rgba(25, 38, 71, 0) 100%); 
+    height: 3px; 
+    width: 100%; 
+    margin: 20px 0;
+}
+/*竖分割线*/
+.bg-radial-gradient {
+    background: radial-gradient(circle, white 0%, transparent 100%);
+}
+/*背景*/
+.backdrop {
+    background-image: url('/图像/迎西.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    text-align:center;  
+}
+.backdrop::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* 调整渐变的高度 */
+    background: linear-gradient(to top, rgb(255,255,255), transparent);
+    z-index: 1;
+}
+/*标题样式*/
+.title-with-lines {
+    position: relative; 
+}
+.title-with-lines::before,
+.title-with-lines::after {
+    content: ''; 
+    position: absolute; 
+    top: 50%; 
+    width: 30px; 
+    height: 2px;
+    background-color: rgb(25,38,71); 
+}
+.title-with-lines::before {
+    left: -40px;
+}
+.title-with-lines::after{
+    right: -40px; 
+}
+/*导航栏*/
+nav {
+    height: 70px;
+    background-color: transparent;
+    z-index: 1000;
+}
+.nav-color {
+    background-color: rgb(25,38,71) !important;
+}
+.nav-link {
+    color: #ddd; 
+    font-size: 1.125rem; 
+    line-height: 2; 
+    text-decoration: none; 
+}
+.nav-link:hover {
+    color: #fff; 
+    transform: scale(1.05); 
+}
+footer{
+    background-color:rgb(25,38,71); 
+    width: 100%; 
+    position:relative; 
+    bottom: 0; 
+    height: 70px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+/* 图片放大效果 */
+.img-box {
+    overflow: hidden;  /* 确保图片放大时不会溢出外框 */
+    position: relative;  /* 相对定位，用于定位伪元素 */
+    border-radius: 10px;
+}
+.img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: all 1s;  /* 平滑过渡效果 */
+}
+.img:hover {
+    transform: scale(1.1); 
+}

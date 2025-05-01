@@ -1,0 +1,17 @@
+
+{
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.host": "127.0.0.1",
+    "liveServer.settings.port": 8800,
+    "liveServer.settings.https": {
+        "enable": false,
+        "cert": "",
+        "key": ""
+    },
+    "liveServer.settings.mount": [
+        {
+            "url": "/models",
+            "path": "./models"
+        }
+    ]
+}

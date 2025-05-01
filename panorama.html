@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>全景导览</title>
+    <link rel="icon" href="./图像/logo.ico" />
+    <link
+      href="https://unpkg.com/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/all.css" />
+    <link rel="stylesheet" href="./css/panorama.css" />
+    <!-- 引入 Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- 引入 OrbitControls -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+    <!-- 引入 GLTFLoader -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style>
+      /* 强制渲染层 */
+      #luma-main {
+        height: 80vh !important;
+        min-height: 600px;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        position: relative !important;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body class="font-sans antialiased">
+    <!-- 导航栏 -->
+    <nav
+      id="navbar"
+      class="py-1 fixed top-0 left-0 right-0 transition-all duration-300"
+    >
+      <div class="flex justify-between items-center px-6">
+        <div
+          class="flex items-center"
+          style="display: flex; align-items: center"
+        >
+          <img
+            src="./图像/logo+文字.png"
+            alt="太原理工大学"
+            style="width: 200px"
+          />
+          <p
+            style="text-indent: 0em"
+            class="text-white text-2xl font-bold ml-2"
+          >
+            云参观平台
+          </p>
+        </div>
+        <div class="flex space-x-4" style="display: flex; align-items: center">
+          <a href="./index.html" class="nav-link">校园简介</a>
+          <div
+            class="bg-radial-gradient"
+            style="width: 0.1rem; height: 60px"
+          ></div>
+          <a href="./panorama.html" class="nav-link">全景导览</a>
+          <div
+            class="bg-radial-gradient"
+            style="width: 0.1rem; height: 60px"
+          ></div>
+          <a href="./model.html" class="nav-link">模型展示</a>
+          <div
+            class="bg-radial-gradient"
+            style="width: 0.1rem; height: 60px"
+          ></div>
+          <a href="./joinus.html" class="nav-link">项目介绍</a>
+        </div>
+      </div>
+    </nav>
+    <section class="backdrop">
+      <h1
+        style="margin-top: 80px; margin-bottom: 10px"
+        class="text-5xl font-bold"
+      >
+        全景导览
+      </h1>
+      <h2 class="text-3xl title-with-lines">在一砖一瓦中触摸历史的印记</h2>
+    </section>
+    <!-- 模型展示区域 -->
+    <div class="panorama-container">
+      <!-- Luma 主模型容器 -->
+      <div id="luma-main">
+        <iframe
+          id="campus-overview"
+          src="https://lumalabs.ai/embed/0ad30448-8573-4dec-bf0f-53c4900e85dc?mode=sparkles&showMenu=false&rand=<%= Date.now() %>"
+          style="width: 100%; height: 100%; border: none"
+          allow="xr-spatial-tracking; fullscreen"
+          loading="eager"
+        ></iframe>
+      </div>
+      <!-- 控制面板 -->
+      <div id="controls" class="flex justify-center mt-4"></div>
+    </div>
+    <!-- 搜索功能 -->
+    <div id="search-container" class="fixed top-0 left-0 right-0 hidden">
+      <div class="flex justify-center mt-24">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="搜索标签..."
+          class="p-2 border"
+        />
+        <button id="searchButton" class="px-4 py-2 ml-2 text-white">
+          搜索
+        </button>
+      </div>
+    </div>
+    <footer class="text-white text-center text-xl">
+      版权所有：太原理工大学
+    </footer>
+    <script>
+      // 导航栏
+      window.addEventListener("scroll", function () {
+        var navbar = document.getElementById("navbar");
+        var searchContainer = document.getElementById("search-container");
+        if (window.scrollY > 650) {
+          navbar.classList.add("nav-color");
+          searchContainer.classList.remove("hidden");
+        } else {
+          navbar.classList.remove("nav-color");
+          searchContainer.classList.add("hidden");
+        }
+      });
+      // 动态加载保证
+      window.addEventListener("DOMContentLoaded", () => {
+        const iframe = document.getElementById("campus-overview");
+        iframe.style.visibility = "hidden";
+
+        setTimeout(() => {
+          iframe.contentWindow.location.reload(true);
+          iframe.style.visibility = "visible";
+        }, 500);
+      });
+    </script>
+    <script src="./js/panorama.js"></script>
+  </body>
+</html>

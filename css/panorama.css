@@ -1,0 +1,41 @@
+.panorama-container *{
+    border-radius: 10px;
+}
+.panorama-container {
+    height: 100vh; 
+    position: relative; /* 设置为相对定位 */
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+#panorama {
+    width: 100%;
+    height: 100%;
+    transition: background-image 0.5s ease;
+    background-position: center; /* 图片居中显示 */
+    background-repeat: no-repeat; /* 防止图片重复 */
+    background-size: contain; 
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    position: absolute; /* 设置为绝对定位 */
+    bottom: 40px; 
+    left: 0;right: 0; /* 确保水平居中 */
+    padding: 0 20px; /* 为按钮添加左右内边距，防止与容器边缘重叠 */
+    z-index: 10;/* 确保按钮在全景图上方 */
+}
+
+button {
+    background-color: rgb(35, 48, 81);
+    color: #eee;
+    border: none; /* 移除默认边框 */
+    padding: 10px 20px; /* 添加内边距 */
+    font-size: 1rem; 
+}
+button:hover {
+    background-color: rgb(25, 38, 71);
+    color: #fff;
+    transform: scale(1.05); 
+}

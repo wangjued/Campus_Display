@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>太原理工大学云参观平台</title>
+    <link rel="icon" href="./图像/logo.ico">
+    <link href="https://unpkg.com/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/joinus.css">
+    <style>
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- 导航栏 -->
+    <nav style="background-color: rgb(25,38,71);" id="navbar" class="py-1 fixed top-0 left-0 right-0 transition-all duration-300">
+        <div class="flex justify-between items-center px-6">
+            <div class="flex items-center" style="display: flex;align-items: center;">
+                <img src="./图像/logo+文字.png" alt="太原理工大学" style="width: 200px;">
+                <p style="text-indent: 0em;" class="text-white text-2xl font-bold ml-2">云参观平台</p>
+            </div>
+            <div class="flex space-x-4" style="display: flex;align-items: center;">
+                <a href="./index.html" class="nav-link">校园简介</a>
+                <div class="bg-radial-gradient" style="width: 0.1rem;height: 60px;"></div>
+                <a href="./panorama.html" class="nav-link">全景导览</a>
+                <div class="bg-radial-gradient" style="width: 0.1rem;height: 60px;"></div>
+                <a href="./model.html" class="nav-link">模型展示</a>
+                <div class="bg-radial-gradient" style="width: 0.1rem;height: 60px;"></div>
+                <a href="./joinus.html" class="nav-link">加入我们</a>
+            </div>
+        </div>    
+    </nav>
+    <br><br>
+    <section class="container mx-auto my-10">
+        <div class="mb-10">
+            <div id="profile" class="title"></div>
+            <h2 class="text-3xl font-bold mb-2">项目介绍</h2>
+            <hr>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <video src="/图像/nerf.mp4" width="400" loop autoplay muted></video>
+                <span>
+                    <p>随着互联网技术的发展，校园虚拟现实平台已经成为了高校宣传、招生、教学等重要的工具。然而，目前校园虚拟现实平台的建设还存在不足。一方面，传统的校园虚拟现实平台通常采用基于传统建模的方式，需要对校园的各个场景进行建模和渲染，这需要耗费大量的人力和物力资源。另一方面，传统的建模方式往往无法真实地还原校园的各个场景，用户的浏览体验往往不够真实和自然。</p>
+                    <p>为了解决这些问题，我们基于神经辐射场（Neural Radiance Fields，NeRF）方法，设计和实现一种基于深度学习的三维校园虚拟现实平台。NeRF是一种基于神经网络深度学习的体积渲染技术，它可以通过神经网络模型学习场景的光照、纹理等信息，实现对场景的高精度还原。相比传统的建模方式，NeRF技术可以大大降低建模的成本，同时还可以提高用户的浏览体验。</p>
+                </span>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <p>NeRF方法的核心是采用神经网络模型对场景进行建模，这个模型可以通过大量的训练数据来学习场景中每个像素的颜色和深度信息。具体来说，NeRF模型将场景表示为一个3D空间中的点云，每个点都有一个颜色和深度值。然后，通过神经网络模型对这些点进行插值，生成场景中任意位置的颜色和深度信息。通过与数据集对比这些信息可以不断迭代神经网络模型，从而训练出可以准确表示任何一点的颜色和深度信息的函数模型，最终可以生成高质量的三维模型。</p>
+                <img src="./图像/vehicle.png" width="600">
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <video src="./图像/vehicle.mp4" width="300" loop autoplay muted></video>
+                <section>
+                    <p style="text-indent: 0;">与传统的3D重建方法相比，NeRF方法具有以下优势：</p>
+                    <ul style="list-style-type: disc;margin-left: 1.25em;">
+                        <li>高精度：NeRF方法可以生成非常高精度的三维模型，可以捕捉到微小的细节。</li>
+                        <li>高效性：NeRF方法（Instant-NGP）可以在较短的时间内生成高质量的三维模型，效率远超过传统方法。</li>
+                        <li>可扩展性：NeRF方法可以处理任意形状和大小的场景，具有很强的可扩展性。</li>
+                    </ul>
+                </section>
+            </div>      
+        </div>
+        <div class="mb-10">
+            <div id="joinus" class="title"></div>
+            <h2 class="text-3xl font-bold mb-4">加入我们</h2>
+            <hr>
+            <form action="/submit.html" method="GET" class="bg-white shadow-md p-6 mx-16 my-10" id="myForm">
+                <div class="mb-6 flex items-center m-4">
+                    <img src="./图像/姓名.png" alt="姓名" class="h-6 w-6 mx-4" style="border-radius: 0;">
+                    <input placeholder="请输入姓名" type="text" id="name" name="name" style='background-color:#f5f5f5' class="border-2 flex-1 p-3 mr-6 text-gray-700 focus:outline-none" required>
+                    <img src="./图像/邮箱.png" alt="邮箱" class="h-6 w-6 mx-4" style="border-radius: 0;">
+                    <input placeholder="请输入邮箱" type="email" id="email" name="email" style='background-color:#f5f5f5' class="border-2 flex-1 p-3 mr-10 text-gray-700 focus:outline-none" required>
+                </div>
+                <div class="mb-6 flex items-center m-4">
+                    <img src="./图像/岗位.png" alt="岗位" class="h-6 w-6 mx-4" style="border-radius: 0;">
+                    <div class="flex items-center space-x-4">
+                        <label class="flex items-center">
+                            <input type="radio" name="profession" value="航拍" class="form-radio" required>
+                            <span class="ml-2 text-gray-700 font">航拍摄影师</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="profession" value="建模" class="form-radio" required>
+                            <span class="ml-2 text-gray-700 font">建模工程师</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="profession" value="前端开发" class="form-radio" required>
+                            <span class="ml-2 text-gray-700 font">前端工程师</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="profession" value="后端开发" class="form-radio" required>
+                            <span class="ml-2 text-gray-700 font">算法工程师</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-6 flex m-4">
+                    <img src="./图像/留言.png" alt="留言" class="h-7 w-7 mx-4">
+                    <textarea required placeholder="请输入留言" id="message" name="message" style='background-color:#f5f5f5' class="mr-10 border-2 flex-1 p-3 text-gray-700 focus:outline-none" rows="4" required></textarea>
+                </div>
+                <div class="m-6 ml-20">
+                    <button type="submit" class="font-bold py-2 px-5">提 交</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer class="text-white text-center py-4 text-xl m-0">
+        版权所有：太原理工大学
+    </footer>
+    <script>
+        // 获取所有输入框和文本域
+        const inputs = document.querySelectorAll('input:not([type="radio"]), textarea');
+        // 为每个输入框和文本域添加 focus 和 input 事件监听器
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                // 当输入框获得焦点时，设置背景为白色
+                this.style.backgroundColor = 'white';
+            });
+            input.addEventListener('input', function() {
+                // 当输入框有内容时，保持背景为白色
+                if (this.value.trim() !== '') {
+                    this.style.backgroundColor = 'white';
+                } else {
+                    // 当输入框为空时，恢复初始背景颜色
+                    this.style.backgroundColor = '#f5f5f5';
+                }
+            });
+            input.addEventListener('blur', function() {
+                // 当输入框失去焦点且为空时，恢复初始背景颜色
+                if (this.value.trim() === '') {
+                    this.style.backgroundColor = '#f5f5f5';
+                }
+            });
+        });       
+    </script>
+</body>
+</html>

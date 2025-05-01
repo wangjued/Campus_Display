@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模型展示</title>
+    <link rel="icon" href="./图像/logo.ico">
+    <link href="https://unpkg.com/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/model.css">
+    <style>
+        #model-3d-view {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #ccc;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- 导航栏 -->
+    <nav id="navbar" class="py-1 fixed top-0 left-0 right-0 transition-all duration-300">
+        <div class="flex justify-between items-center px-6">
+            <div class="flex items-center" style="display: flex;align-items: center;">
+                <img src="./图像/logo+文字.png" alt="太原理工大学" style="width: 200px;">
+                <p style="text-indent: 0em;" class="text-white text-2xl font-bold ml-2">云参观平台</p>
+            </div>
+            <div class="flex space-x-4" style="display: flex;align-items: center;">
+                <a href="./index.html" class="nav-link">校园简介</a>
+                <div class="bg-radial-gradient" style="width: 0.1rem;height: 60px;"></div>
+                <a href="./panorama.html" class="nav-link">全景导览</a>
+                <div class="bg-radial-gradient" style="width: 0.1rem;height: 60px;"></div>
+                <a href="./model.html" class="nav-link">模型展示</a>
+                <div class="bg-radial-gradient" style="width: 0.1rem;height: 60px;"></div>
+                <a href="./joinus.html" class="nav-link">加入我们</a>
+            </div>
+        </div>    
+    </nav>
+    <section class="backdrop">
+        <h1 style="margin-top: 80px;margin-bottom: 10px;z-index: 2;" class="text-5xl font-bold">模型展示</h1>
+        <h2 style="z-index: 2;" class="text-3xl title-with-lines">标志性建筑，尽在眼前</h2>
+    </section>
+    <br><br><br>
+    <div class="container">
+        <div class="model-gallery">
+            <div class="model-thumbnail" data-model-id="model1">
+                <img src="./图像/图书馆.png" alt="图书馆">
+                <div class="thumbnail-caption">图书馆</div>
+            </div>
+            <div class="model-thumbnail" data-model-id="model2">
+                <img src="./图像/公园.png" alt="清泽园">
+                <div class="thumbnail-caption">清泽园</div>
+            </div>
+            <div class="model-thumbnail" data-model-id="model3">
+                <img src="./图像/电机馆.png" alt="电机馆">
+                <div class="thumbnail-caption">电机馆</div>
+            </div>
+            <div class="model-thumbnail" data-model-id="model4">
+                <img src="./图像/机械馆.png" alt="机械馆">
+                <div class="thumbnail-caption">机械馆</div>
+            </div>
+            <div class="model-thumbnail" data-model-id="model5">
+                <img src="./图像/逸夫楼.png" alt="逸夫楼">
+                <div class="thumbnail-caption">逸夫楼</div>
+            </div>
+        </div>
+        <div class="model-details" id="model-details">
+            <div style="display: flex;flex-direction: row;">
+                <div class="img-box">
+                    <img id="model-image" class="img">
+                </div>
+                <p id="model-description"></p>
+            </div>
+            <div id="model-3d-view" class="model-3d-view">
+                <!-- 3D视图容器，实际3D视图将通过iframe嵌入 -->
+            </div>
+            
+        </div>
+    </div>
+    <footer class="text-white text-center py-4 text-xl m-0">
+        版权所有：太原理工大学
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="./js/model.js"></script>
+    <script>
+        //导航栏
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('navbar');
+            if (window.scrollY > 650) {
+                navbar.classList.add('nav-color');
+            } else {
+                navbar.classList.remove('nav-color');
+            }
+        });
+    </script>
+</body>
+</html>

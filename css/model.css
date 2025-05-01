@@ -1,0 +1,121 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.container *{
+    border-radius: 10px;
+}
+/*选择模型*/
+.model-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+}
+.model-thumbnail {
+    cursor: pointer;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 80px;
+    height: 90px;
+    background-color: #fafafa;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.model-thumbnail:hover{
+    background-color:  #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0, 0.2);
+    transform: translateY(-5px);
+}
+.model-thumbnail img {
+    max-width: 100%;
+    object-fit: contain;
+    margin-bottom: 20px;
+    border-radius: 0;
+}
+.thumbnail-caption {
+    position: absolute;
+    bottom:0; 
+    color: rgb(25,38,71);
+    padding: 5px; 
+    font-size: 16px; 
+}
+.model-thumbnail.reversed {
+    background-color: rgb(25,38,71); 
+    box-shadow: 0 4px 8px rgba(0,0,0, 0.3);
+}
+.model-thumbnail.reversed .thumbnail-caption {
+    color: #fff; 
+}
+.model-thumbnail.reversed img {
+    filter:brightness(100); 
+}
+/*照片、文字、模型*/
+.model-details {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+.img-box {
+    width: 60%; 
+    margin-right: 20px; 
+}
+#model-description {
+    width: 40%; 
+    margin: 20px; 
+    text-indent: 2em; 
+    font-size: 1.125rem; 
+    line-height: 2;
+}
+.model-3d-view {
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    line-height: 400px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+#model-3d-view {
+    display: none; /* 默认隐藏 */
+}
+
+#model-3d-view iframe {
+    display: block; /* 当 iframe 加载时显示 */
+}
+/*背景*/
+.backdrop {
+    background-image: url('/图像/明向.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    position: relative; /* 确保伪元素定位正确 */
+}
+.backdrop::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* 覆盖整个.backdrop 元素 */
+    background: 
+        linear-gradient(to bottom, rgb(0, 116, 201), transparent 20%), 
+        linear-gradient(to top, rgba(255, 255, 255, 1), transparent 200px); 
+    z-index: 1;
+}

@@ -27,7 +27,7 @@ hr{
 }
 /*背景*/
 .backdrop {
-    background-image: url('/图像/迎西.jpg');
+    background-image: url('../图像/迎西.jpg');
     background-size: cover;
     background-position: center;
     height: 700px;

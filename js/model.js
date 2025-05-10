@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       description:
         "清泽园位于校区中心，北接图书馆，南邻办公主楼，东西两侧为电机馆与机械馆，形成贯通南北、东西的景观轴线。作为校园的优美景观，是师生舒展心情，感受大自然的胜地。圆中心有着喷泉和人民托举地球的雕塑，其后印有“创造一个有中国特色的高水平的大学。”其历史底蕴浓厚，见证着一代太理学子的青春和风采，是校园里一道靓丽的风景线。",
       modelUrl:
-        "https://lumalabs.ai/embed/84a51d8c-bc0d-4418-8339-7f6956a72b87?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=bottom-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=false",
+        "https://lumalabs.ai/embed/a442a28e-f2df-4665-8f1f-18cbb7aa1bc7?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=bottom-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=false",
     },
     model3: {
       name: "电机馆",
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
       description:
         "太原理工大学迎西校区电机馆是该校历史悠久的标志性建筑之一，作为电气与动力工程学院的核心教学科研场所，电机馆内设有智能系统与控制实验室、极地监测技术研究团队等，配备无线电装置、无人机、探测小车等先进科研设备，并承担国家级项目研究。该馆还以绿色能源应用著称，楼顶布置风能、太阳能发电装置，形成独立运行的微电网系统，满足建筑的日常用电需求，成为新能源技术实践的典范。其地理位置优越，与机械馆隔园相望，构成校园核心景观轴。",
       modelUrl:
-        "https://lumalabs.ai/embed/ff60cf85-7760-4f9f-ab60-94d7ae59fd56?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=bottom-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=false",
+        "https://lumalabs.ai/embed/db04b798-845c-47d1-9a6d-88d9936780ac?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=bottom-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=false",
     },
     model4: {
       name: "机械馆",
